@@ -12,10 +12,5 @@ pretty: node_modules
 	find launchpod/src/main/java -iname *.java | xargs $(CLANG_FORMAT) -i
 	find launchpod/src/main/webapp -iname *.component.ts | xargs $(CLANG_FORMAT) -i
 
-validate: node_modules
-	$(HTML_VALIDATE) launchpod/src/main/webapp/angular-launchpod/src/app/*.component.html
-	$(CSS_VALIDATOR) launchpod/src/main/webapp/angular-launchpod/src/app/*.component.css
-	$(ESLINT) launchpod/src/main/webapp/angular-launchpod/src/app/*.component.ts
-
 package:
 	mvn package
